@@ -50,8 +50,8 @@ public class Main {
             //Creating events, and adding the computed distance to matrix
             for (int i = 0; i < no_of_events; i++) {
                 Event_ e = new Event_(i + 1);
-                int m = randomGenerator.nextInt(20);
-                int n = randomGenerator.nextInt(20);
+                int m = randomGenerator.nextInt(21);
+                int n = randomGenerator.nextInt(21);
                 int dist = Math.abs(m - x) + Math.abs(n - y);
                 Touple t = new Touple(e, dist);
                 matrix[m][n] = t;
@@ -71,7 +71,7 @@ public class Main {
             if (sorted_dist.size() <= events) {
                 size = sorted_dist.size();
             }
-            System.out.println("Closest " + size + " Events to (" + (x - 10) + "," + (y - 10) + "):");
+            System.out.println("Closest Events to (" + (x - 10) + "," + (y - 10) + "):");
             for (int i = 0; i < size; i++) {
                 System.out.println("Event " + sorted_dist.get(i).getE().get_event_no() + " - $" + (double) Math.round(sorted_dist.get(i).getE().get_lowest_price() * 100) / 100 + ", Distance " + sorted_dist.get(i).get_Dist());
             }
